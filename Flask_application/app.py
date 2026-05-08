@@ -54,8 +54,6 @@ def submittodo():
         status = collection.insert_one(form_data)
         return "Data submitted successfully" if status.acknowledged==True else "Data could not be submitted"
     except:
-        day_of_the_week = datetime.today().strftime("%A")
-        currrent_time = datetime.now().strftime("%H:%M:%S")
         return "Data could not be submitted"
 
 
