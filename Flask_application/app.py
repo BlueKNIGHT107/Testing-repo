@@ -53,6 +53,17 @@ def todo():
     currrent_time = datetime.now().strftime("%H:%M:%S")
     return render_template("todo.html", day_of_the_week=day_of_the_week, current_time=currrent_time)
 
+@app.route("/submittodo")
+def submittodo():
+    try:
+        form_data = dict(request.form)
+        status = collection.insert_one(form_data)
+        return "Data submitted successfully" if status.acknowledged==True else "Data could not be submitted"
+    except:
+        day_of_the_week = datetime.today().strftime("%A")
+        currrent_time = datetime.now().strftime("%H:%M:%S")
+        return "Data could not be submitted"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
