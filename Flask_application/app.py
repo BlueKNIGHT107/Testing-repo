@@ -47,9 +47,16 @@ def view_from_file():
         data = file.readlines()
     return {"data": data}
 
-@app.route("/")
-def func():
-    return None
+@app.route("/submittodo")
+def submittodo():
+    try:
+        form_data = dict(request.form)
+        status = collection.insert_one(form_data)
+        return "Data submitted successfully" if status.acknowledged==True else "Data could not be submitted"
+    except:
+        day_of_the_week = datetime.today().strftime("%A")
+        currrent_time = datetime.now().strftime("%H:%M:%S")
+        return "Data could not be submitted"
 
 
 if __name__ == "__main__":
