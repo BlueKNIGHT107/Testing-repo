@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: yellow;
+}
+
+.centered {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.error {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
