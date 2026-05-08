@@ -47,9 +47,11 @@ def view_from_file():
         data = file.readlines()
     return {"data": data}
 
-@app.route("/")
-def func():
-    return None
+@app.route("/todo")
+def todo():
+    day_of_the_week = datetime.today().strftime("%A")
+    currrent_time = datetime.now().strftime("%H:%M:%S")
+    return render_template("todo.html", day_of_the_week=day_of_the_week, current_time=currrent_time)
 
 
 if __name__ == "__main__":

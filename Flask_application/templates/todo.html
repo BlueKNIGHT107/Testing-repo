@@ -1,0 +1,30 @@
+<!DOCTYPE html?
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http equiv = "X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <title>ToDo Form</title>
+    </head>
+    <body>
+        <p>Hi welcome to the todo page</p>
+        <p>Today is a {{ day_of_the_week }}</p>
+        <p>The time is {{ current_time }}</p>
+
+        <div class="centered">
+            <form action="/submit" method="POST">
+                <label for="itemName">Item Name</label>
+                <input type="text" name="itemName", id="itemName" placeholder="Enter the item name">
+                <br>
+
+                <label for="itemDescription">Email</label>
+                <input type="text" name="itemDescription", id="itemDescription" placeholder="Enter the description of the item">
+                <br>
+
+                <input type="submit", value="Submit">
+            </form>
+        </div>
+    </body>
+
+</html>
